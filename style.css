@@ -1,0 +1,24 @@
+body {
+    background: linear-gradient(to right, #fff, grey, #000);
+    color: blue;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px springgreen;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+    
+}
+h1 {
+    font-style: none;
+    color: hsl(219.9,68.1%,44.8%);
+    
+}
+
+button {
+    border: 1px solid springgreen;
+    border-radius: 5px;
+    width: 100px;
+    background-color: hsl(219.9,72.8%,81.9%);
+}
+
