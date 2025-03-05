@@ -1,24 +1,88 @@
 body {
-    background: linear-gradient(to right, #fff, grey, #000);
-    color: blue;
-    text-transform: uppercase;
-    text-decoration: underline;
-    text-shadow: 2px 2px 2px springgreen;
-    font-weight: bolder;
-    font-style: italic;
+    background: linear-gradient(to right, #000, grey);
+    color: #fff;
     text-align: center;
     
 }
-h1 {
-    font-style: none;
-    color: hsl(219.9,68.1%,44.8%);
+
+
+header {
+    position: fixed;
+    background: linear-gradient(to right, springgreen, cyan);
+    width: 96%;
+    padding: 5px 5px 5px 5px;
+    margin: 10px auto;
+    border-radius: 5px;
+    text-shadow: 2px 2px #000;
+    margin-top: -8rem;
     
 }
 
-button {
-    border: 1px solid springgreen;
-    border-radius: 5px;
-    width: 100px;
-    background-color: hsl(219.9,72.8%,81.9%);
+
+#intro_text {
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px red;
+    text-decoration: underline;
 }
 
+
+main {
+    background-color: transparent;
+    color: #fff;
+    width: 98.5%;
+    height: 41rem;
+    margin: 10px auto;
+    margin-top: 8.5rem;
+    padding: 5px 5px 5px 5px;
+}
+
+
+#bot_message {
+    background-color: hsl(219.9,78.6%,63.9%);
+    width: 45%;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
+
+
+#user_message {
+    width: 45%;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    background-color: hsl(137.1,65.6%,58.4%);
+    margin-left: 19.5rem;
+}
+
+
+textarea {
+    background-color: transparent;
+    color: #fff;
+    font-weight: bolder;
+    width: 92%;
+    height: 2rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 5px 4px 5px 5px ;
+    margin-left: -1rem;
+    border: 2px solid springgreen;
+}
+
+#compose_section {
+    margin: 10px auto;
+}
+
+
+#send_button {
+    height: 2.9rem;
+    width: 5%;
+    border: 2px solid springgreen;
+    margin-bottom: 1rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: grey;
+    background-color: #000;
+    position: absolute;
+    
+}

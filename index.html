@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>FIRAT github website</title>
+        <title>FIRST github website</title>
         
         <meta charset="utf-8">
         <meta name="viewport" content="wodth=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
-        <h1 id="head">Welcome to my github website</h1>
-        <br>
-        <button id="button">press me</button>
+        <header>
+            <h1>LANTEX AI</h1>
+            <p id="intro_text">Developing advanced brains</p>
+        </header>
         
+        <main id="main_section" >
+            <div id="text_space">
+                <p class="chat_paragraphs" id="bot_message">Hi there 👋, how may I help you ? </p>
+                
+                <!---p class="chat_paragraphs" id="user_message">Hello bot, how are you ?</p-->
+            </div>
+            
+            <div id="compose_section">
+                <textarea id="text_area"></textarea><button id="send_button"><i class="fas fa-paper-plane icon" ></i></button>
+            </div>
+        </main>
         
         <script type="text/javascript" src="app.js"></script>
     </body>
