@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #000, grey);
+    background-color: lightgrey;
     color: #fff;
     text-align: center;
     
@@ -7,13 +7,14 @@ body {
 
 
 header {
+    color: #000;
     position: fixed;
-    background: linear-gradient(to right, springgreen, cyan);
+    background: linear-gradient(to right, blue, #fff);
     width: 96%;
     padding: 5px 5px 5px 5px;
     margin: 10px auto;
     border-radius: 5px;
-    text-shadow: 2px 2px #000;
+    text-shadow: 3px 3px 3px springgreen;
     margin-top: -8rem;
     
 }
@@ -21,8 +22,8 @@ header {
 
 #intro_text {
     font-weight: bolder;
-    text-shadow: 2px 2px 2px red;
-    text-decoration: underline;
+    text-shadow: 2px 2px 2px springgreen;
+    letter-spacing: 1px;
 }
 
 
@@ -57,9 +58,10 @@ main {
 
 
 textarea {
-    background-color: transparent;
-    color: #fff;
+    background: linear-gradient(to left , white, hsl(229,47.7%,50.2%));
+    color: #000;
     font-weight: bolder;
+    font-size: 15px;
     width: 92%;
     height: 2rem;
     border-top-left-radius: 10px;
@@ -67,6 +69,8 @@ textarea {
     padding: 5px 4px 5px 5px ;
     margin-left: -1rem;
     border: 2px solid springgreen;
+    
+    opacity: 0.9;
 }
 
 #compose_section {
@@ -75,14 +79,14 @@ textarea {
 
 
 #send_button {
-    height: 2.9rem;
+    height: 2.82rem;
     width: 5%;
     border: 2px solid springgreen;
     margin-bottom: 1rem;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    color: grey;
-    background-color: #000;
+    color: #fff;
+    background: #fff;
     position: absolute;
     
 }
