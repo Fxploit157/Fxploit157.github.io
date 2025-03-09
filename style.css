@@ -1,5 +1,5 @@
 body {
-    background-color: lightgrey;
+    background: linear-gradient(to right, hsl(229,70.8%,60.7%), lightblue, hsl(229,6.6%,75.2%));
     color: #fff;
     text-align: center;
     
@@ -9,7 +9,7 @@ body {
 header {
     color: #000;
     position: fixed;
-    background: linear-gradient(to right, blue, #fff);
+    background: linear-gradient(to right, springgreen, #001);
     width: 96%;
     padding: 5px 5px 5px 5px;
     margin: 10px auto;
@@ -58,8 +58,8 @@ main {
 
 
 textarea {
-    background: linear-gradient(to left , white, hsl(229,47.7%,50.2%));
-    color: #000;
+    background: linear-gradient(to left , #001, hsl(229,47.7%,50.2%));
+    color: #ffe;
     font-weight: bolder;
     font-size: 15px;
     width: 92%;
@@ -68,7 +68,7 @@ textarea {
     border-bottom-left-radius: 10px;
     padding: 5px 4px 5px 5px ;
     margin-left: -1rem;
-    border: 2px solid springgreen;
+    border: 2px solid #000;
     
     opacity: 0.9;
 }
@@ -81,12 +81,24 @@ textarea {
 #send_button {
     height: 2.82rem;
     width: 5%;
-    border: 2px solid springgreen;
+    border: 2px solid #000;
     margin-bottom: 1rem;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     color: #fff;
-    background: #fff;
+    background: #001;
     position: absolute;
+    
+}
+
+#activator_btn {
+    height: 4rem;
+    width: 4rem;
+    background: linear-gradient(to right, blue, springgreen );
+    border: 1.5px solid #000;
+    border-radius: 50%;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
     
 }

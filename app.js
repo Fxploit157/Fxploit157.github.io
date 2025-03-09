@@ -15,9 +15,20 @@ const db = [
     
 ]
 
+
+//get main parts 
+const main_area = document.querySelector("#main_section") ;
+const activator = document.querySelector("#activator") ;
+
+//set display
+main_area.display = "none" ;
+activator.display = "" ;
+
+//get different sections and/or elements
 const textSpace = document.querySelector("#text_space") ;
 const button = document.querySelector("#send_button") ;
 const textArea = document.querySelector("#text_area") ;
+const 
 
 
 //disable the send button
@@ -29,8 +40,22 @@ textArea.addEventListener("click", () => {
     
 }); 
 
+//set action for when clicking activator button
+activator.addEventListener("click", () => {
+    
+    main_area.display = "" ;
+    activator.display = "none" ;
+    
+});
+
+//set action for clicking the send button
 button.addEventListener("click", () => {
     let user_input = textArea.value ;
+    
+    //validate for an empty input 
+    if (user_input.toLowerCase() == "") {
+        return null ;
+    }
     
     //create two paragraph elements
     const user_text = document.createElement("p") ;
@@ -93,7 +118,7 @@ button.addEventListener("click", () => {
                 //capture knowledge and save to database
                 let _knowledge = {
                     "question": user_input,
-                    "answer" _.user 
+                    "answer": _user 
                 }
                 db.push(_knowledge) ;
                 
