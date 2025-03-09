@@ -17,19 +17,21 @@ const db = [
 
 
 //get main parts 
-const main_area = document.querySelector("#main_section") ;
 const activator = document.querySelector("#activator") ;
 
-//set display
-main_area.display = "none" ;
-activator.display = "" ;
+
 
 //get different sections and/or elements
 const textSpace = document.querySelector("#text_space") ;
 const button = document.querySelector("#send_button") ;
 const textArea = document.querySelector("#text_area") ;
-const 
+const composeArea = document.querySelector("#compose_section") ;
+const activator_btn = document.querySelector("#activator_btn") ;
 
+//set display
+textArea.style.display = "none" ;
+composeArea.style.display = "none" ;
+activator.style.display = "" ;
 
 //disable the send button
 button.style.disable = true;
@@ -41,10 +43,10 @@ textArea.addEventListener("click", () => {
 }); 
 
 //set action for when clicking activator button
-activator.addEventListener("click", () => {
-    
-    main_area.display = "" ;
-    activator.display = "none" ;
+activator_btn.addEventListener("click", () => {
+    composeArea.style.display = "" ;
+    textArea.style.display = "" ;
+    activator_btn.style.display = "none" ;
     
 });
 
@@ -71,7 +73,7 @@ button.addEventListener("click", () => {
     //create a new fuse 
     const fuse = new Fuse(db, {
         keys: ["question", "answer"],
-        threshold: 0.8,
+        threshold: 0.18,
     });
     
     const result = fuse.search(user_input) ;
@@ -83,10 +85,10 @@ button.addEventListener("click", () => {
             bot_text.setAttribute("class", "chat_paragraphs") ;
             bot_text.setAttribute("id", "bot_message") ;
             
-            for (res of result) {
-                textSpace.appendChild(bot_text) ;
-                bot_text.textContent = res[0].item.answer ;
-            }
+            let res = result[0] ;
+            textSpace.appendChild(bot_text) ;
+            bot_text.textContent = res.item.answer ;
+            
     
     } else {
         
