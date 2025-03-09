@@ -44,6 +44,7 @@ textArea.addEventListener("click", () => {
 
 //set action for when clicking activator button
 activator_btn.addEventListener("click", () => {
+    alert("clicked");
     composeArea.style.display = "" ;
     textArea.style.display = "" ;
     activator_btn.style.display = "none" ;
@@ -52,6 +53,7 @@ activator_btn.addEventListener("click", () => {
 
 //set action for clicking the send button
 button.addEventListener("click", () => {
+    alert("clicked");
     let user_input = textArea.value ;
     
     //validate for an empty input 
