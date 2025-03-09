@@ -85,15 +85,15 @@ textarea {
     margin-bottom: 1rem;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    color: #fff;
+    color: #000;
     background: #001;
     position: absolute;
     
 }
 
 #activator_btn {
-    height: 4rem;
-    width: 4rem;
+    height: 4.2rem;
+    width: 4.2rem;
     background: linear-gradient(to right, blue, springgreen );
     border: 1.5px solid #000;
     border-radius: 50%;
