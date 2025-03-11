@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, hsl(229,70.8%,60.7%), lightblue, hsl(229,6.6%,75.2%));
+    background-color: hsl(229,0%,79%);
     color: #fff;
     text-align: center;
     
@@ -30,6 +30,8 @@ header {
 main {
     background-color: transparent;
     color: #fff;
+    font-weight: bolder;
+    font-style: italic;
     width: 98.5%;
     height: 41rem;
     margin: 10px auto;
@@ -39,7 +41,10 @@ main {
 
 
 #bot_message {
-    background-color: hsl(219.9,78.6%,63.9%);
+    background-color: grey;
+    color: #000;
+    font-weight: bolder;
+    font-style: italic;
     width: 45%;
     border-radius: 10px;
     padding: 5px 5px 5px 5px;
@@ -52,7 +57,7 @@ main {
     border-radius: 10px;
     padding: 5px 5px 5px 5px;
     margin: 5px 5px 5px 5px;
-    background-color: hsl(137.1,65.6%,58.4%);
+    background-color: hsl(229,73.6%,57%);
     margin-left: 19.5rem;
 }
 
@@ -67,7 +72,7 @@ textarea {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 5px 4px 5px 5px ;
-    margin-left: -1.5rem;
+    margin-left: -2.1rem;
     border: 2px solid #000;
     
     opacity: 0.9;
@@ -101,5 +106,5 @@ textarea {
     font-style: italic;
     font-size: 25px;
     
-    margin-top: -4rem;
+    margin: -8rem ;
 }
