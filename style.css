@@ -1,6 +1,6 @@
 body {
-    background-color: hsl(229,0%,79%);
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     text-align: center;
     
 }
@@ -28,6 +28,7 @@ header {
 
 
 main {
+    border-radius: 10px;
     background-color: transparent;
     color: #fff;
     font-weight: bolder;
@@ -41,12 +42,12 @@ main {
 
 
 #bot_message {
-    background-color: grey;
+    background-color: #fff;
     color: #000;
     font-weight: bolder;
     font-style: italic;
     width: 45%;
-    border-radius: 10px;
+    border-radius: 0px 10px 10px 10px;
     padding: 5px 5px 5px 5px;
     margin: 5px 5px 5px 5px;
 }
@@ -54,10 +55,11 @@ main {
 
 #user_message {
     width: 45%;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 10px;
     padding: 5px 5px 5px 5px;
     margin: 5px 5px 5px 5px;
-    background-color: hsl(229,73.6%,57%);
+    background-color: hsl(233.9,90.3%,80.7%);
+    color: #000;
     margin-left: 19.5rem;
 }
 
@@ -106,5 +108,5 @@ textarea {
     font-style: italic;
     font-size: 25px;
     
-    margin: -8rem ;
+    margin: 8rem ;
 }
