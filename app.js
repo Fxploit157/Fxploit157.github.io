@@ -105,7 +105,7 @@ button.addEventListener("click", () => {
         bot_text.setAttribute("id", "bot_message") ;
         textSpace.appendChild(bot_text) ;
         //bot response
-        bot_realisation = "I don't know the answer, please teach me, or type 'skip' to skip . " ;
+        bot_realisation = "I don't know the answer, can you please teach me, or type 'skip' to skip . " ;
         textArea.value = "";
         
         var new_answer = prompt(bot_realisation);
@@ -113,7 +113,7 @@ button.addEventListener("click", () => {
         if (new_answer) {
             
             if (new_answer.toLowerCase().includes("skip") || new_answer == "" || new_answer == null || new_answer == undefined ) {
-                window.alert("Since you did not tell Vercel the answer, don't expect Vercel to know it.");
+                window.alert("Since you did not teach Vercel the answer, don't expect Vercel to know it.");
                 
             } else {
                 
@@ -131,13 +131,13 @@ button.addEventListener("click", () => {
                 text_space.appendChild(bot_text) ;
                 
                 //bot response after learning
-                bot_text.textContent = "Thank you, I have learned something new today." ;
+                bot_text.textContent = "Thank you, I have learned a new response." ;
                 
                 
             }
             
         } else {
-            window.alert("Since you did not tell Vercel the answer, don't expect Vercel to know it.");
+            window.alert("Since you did not teach Vercel the answer, don't expect Vercel to know it.");
         }
         
     }
