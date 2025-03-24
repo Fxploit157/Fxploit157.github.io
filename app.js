@@ -110,7 +110,7 @@ button.addEventListener("click", () => {
     
         //fetch the answer on wikipedia...
         async function getWikiSummary(query) {
-            alert("searching wikipedia")
+            //alert("searching wikipedia")
             const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`) ;
             const data = response.json() ;
             if (!response.ok) {
