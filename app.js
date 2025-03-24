@@ -109,7 +109,6 @@ button.addEventListener("click", () => {
         textArea.value = "";
     
         //fetch the answer om wikipedia...
-        alert(user_input_main) ;
         
         async function getWikiSummary(query) {
             const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`) ;
