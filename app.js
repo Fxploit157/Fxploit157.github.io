@@ -108,9 +108,9 @@ button.addEventListener("click", () => {
         bot_realisation = "I don't know the answer, can you please teach me, or type 'skip' to skip . " ;
         textArea.value = "";
     
-        //fetch the answer om wikipedia...
-        
+        //fetch the answer on wikipedia...
         async function getWikiSummary(query) {
+            alert("searching wikipedia")
             const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`) ;
             const data = response.json() ;
             if (!response.ok) {
@@ -119,7 +119,7 @@ button.addEventListener("click", () => {
                 let bot_realisation = prompt(bot_alert) ;
                 
                 if (bot_realisation.toLowerCase() == null || bot_realisation.toLowerCase() == "" || bot_realisation.toLowerCase() == undefined ) {
-                    alert("You did not teach me the answer, so beware that I am still evolving. ");
+                    alert("You did not teach me the answer, for the fact that I don't know it it means that I'm still evolving. ");
                 } else {
                     bot_text.textContent = "Thank you for teaching me the answer .";
                     let new_knowledge = {
