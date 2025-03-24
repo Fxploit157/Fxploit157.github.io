@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: gray;
     color: #000;
     text-align: center;
     
@@ -9,12 +9,12 @@ body {
 header {
     color: #000;
     position: fixed;
-    background: linear-gradient(to right, springgreen, #001);
+    background: linear-gradient(to right, #fff, #001);
     width: 96%;
     padding: 5px 5px 5px 5px;
     margin: 10px auto;
     border-radius: 5px;
-    text-shadow: 3px 3px 3px springgreen;
+    text-shadow: 1px 1px #fff;
     margin-top: -8rem;
     
 }
@@ -22,7 +22,7 @@ header {
 
 #intro_text {
     font-weight: bolder;
-    text-shadow: 2px 2px 2px springgreen;
+    text-shadow: 1px 1px 1px #fff;
     letter-spacing: 1px;
 }
 
@@ -42,8 +42,8 @@ main {
 
 
 #bot_message {
-    background-color: lightblue;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-weight: bolder;
     font-style: italic;
     width: 45%;
@@ -58,17 +58,19 @@ main {
     border-radius: 10px 10px 0px 10px;
     padding: 5px 5px 5px 5px;
     margin: 5px 5px 5px 5px;
-    background-color: hsl(233.9,90.3%,80.7%);
+    background-color: #fff;
     color: #000;
     margin-left: 19.5rem;
+    overflow: wrap;
 }
 
 
 textarea {
-    background: linear-gradient(to left , #001, hsl(229,47.7%,50.2%));
-    color: #ffe;
+    background: linear-gradient(to left , #001, #fff);
+    color:darkblue;
+    letter-spacing: 1px;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 17px;
     width: 94%;
     height: 2rem;
     border-top-left-radius: 10px;
@@ -101,12 +103,13 @@ textarea {
 #activator_btn {
     height: 4.2rem;
     width: 4.2rem;
-    background: linear-gradient(to right, blue, springgreen );
-    border: 1.5px solid #000;
+    background: linear-gradient(to right, #fff, #000 );
+    border: 1.5px solid #fff;
     border-radius: 50%;
     font-weight: bold;
     font-style: italic;
     font-size: 25px;
+    text-shadow: 1px 1px #fff;
     
     margin: 8rem ;
 }

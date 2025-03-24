@@ -42,10 +42,10 @@ activator_btn.addEventListener("click", () => {
 //set action for clicking the send button
 button.addEventListener("click", () => {
 
-    let user_input = textArea.value ;
+    let user_input_main = textArea.value ;
     
     //validate for an empty input 
-    if (user_input.toLowerCase() == "") {
+    if (user_input_main.toLowerCase() == "") {
         return null ;
     }
     
@@ -57,7 +57,7 @@ button.addEventListener("click", () => {
     user_text.setAttribute("class", "chat_paragraphs") ;
     user_text.setAttribute("id", "user_message");
     textSpace.appendChild(user_text) ;
-    user_text.textContent = user_input ;
+    user_text.textContent = user_input_main ;
     
     
     //create a new fuse 
@@ -66,14 +66,14 @@ button.addEventListener("click", () => {
         threshold: 0.26,
     });
     
-    const result = fuse.search(user_input) ;
+    const result = fuse.search(user_input_main) ;
     
-    console.log(result) ;
+    //console.log(result) ;
+    
     // console.log("___________");
     // console.log(user_input.length)
     // console.log(Math.ceil(result[0].item.question.length)) ;
     // console.log(user_input.length + Math.ceil(result[0].item.question.length/3.5) );
-    
     
     
     // if (Math.ceil(result[0].item.question.length) <  user_input.length + Math.ceil(result[0].item.question.length/3.5)) {
@@ -84,7 +84,7 @@ button.addEventListener("click", () => {
     
     
     
-    if (Object.entries(result).length > 0  &&  Math.ceil(result[0].item.question.length) <  user_input.length + Math.ceil(result[0].item.question.length/3.5) ) {
+    if (Object.entries(result).length > 0  &&  Math.ceil(result[0].item.question.length) <  user_input_main.length + Math.ceil(result[0].item.question.length/3.5) ) {
         
             //set bot paragraph 
             let bot_text = document.createElement("p") ;
@@ -107,40 +107,47 @@ button.addEventListener("click", () => {
         //bot response
         bot_realisation = "I don't know the answer, can you please teach me, or type 'skip' to skip . " ;
         textArea.value = "";
+    
+        //fetch the answer om wikipedia...
+        alert(user_input_main) ;
         
-        var new_answer = prompt(bot_realisation);
-        
-        if (new_answer) {
-            
-            if (new_answer.toLowerCase().includes("skip") || new_answer == "" || new_answer == null || new_answer == undefined ) {
-                window.alert("Since you did not teach Vercel the answer, don't expect Vercel to know it.");
+        async function getWikiSummary(query) {
+            const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`) ;
+            const data = response.json() ;
+            if (!response.ok) {
+                console.error("no search results") ;
+                let bot_alert = "I don't know the answer, can you please teach me ? enter the answer or 'skip' to skip ." ;
+                let bot_realisation = prompt(bot_alert) ;
                 
-            } else {
-                
-                let new_knowledge = {
-                    "question": user_input,
-                    "answer": new_answer
+                if (bot_realisation.toLowerCase() == null || bot_realisation.toLowerCase() == "" || bot_realisation.toLowerCase() == undefined ) {
+                    alert("You did not teach me the answer, so beware that I am still evolving. ");
+                } else {
+                    bot_text.textContent = "Thank you for teaching me the answer .";
+                    let new_knowledge = {
+                        "question":user_input_main,
+                        "answer": bot_realisation
+                    }
+                    
+                    db.push(new_knowledge) ;
                 }
                 
-                db.push(new_knowledge) ;
-                
-                //create a new paragraph to parse bot new response
-                let bot_text = document.createElement("p") ;
-                bot_text.setAttribute("id", "bot_message") ;
-                bot_text.setAttribute("class", "chat_paragraphs")
-                text_space.appendChild(bot_text) ;
-                
-                //bot response after learning
-                bot_text.textContent = "Thank you, I have learned a new response." ;
-                
-                
+                return null ;
             }
-            
-        } else {
-            window.alert("Since you did not teach Vercel the answer, don't expect Vercel to know it.");
+            return data ;
         }
         
+        async function representSummary(result) {
+            const res = await result ;
+            if (res) {
+                bot_text.innerHTML = res.extract_html ;
+            } else {
+                return null;
+            }
+        }
+        
+        representSummary(getWikiSummary(user_input_main)) ;
     }
+    
         
 });
 
