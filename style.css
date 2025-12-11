@@ -41,13 +41,14 @@ header h1 {
 }
 
 header abbr {
-  background-image: linear-gradient(to bottom, rgb(8, 45, 255), #2fa2e4);
+  background-image: linear-gradient(to bottom, rgb(243, 243, 243), #000a91);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-weight: lighter;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
+  font-size: 15px;
 }
 
 main {
