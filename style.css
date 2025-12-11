@@ -34,14 +34,14 @@ header {
 
 header h1 {
   font-size: 40px;
-  background-image: linear-gradient(to bottom, rgb(1, 90, 255), #1000f0);
+  background-image: linear-gradient(to bottom, #015aff, #1000f0);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
 header abbr {
-  background-image: linear-gradient(to bottom, rgb(8, 45, 255), #020481);
+  background-image: linear-gradient(to bottom, rgb(8, 45, 255), #2fa2e4);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
