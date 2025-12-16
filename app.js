@@ -390,6 +390,9 @@ activator_btn.addEventListener("click", () => {
 button.addEventListener("click", () => {
   let user_input_main = textArea.value;
 
+  // keep the focus on the textarea button...
+  textArea.focus();
+
   //validate for an empty input
   if (user_input_main.toLowerCase() == "") {
     return null;
