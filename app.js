@@ -5,10 +5,15 @@ const db = [
     question: "Hello bot how are you",
     answer: "I am fine user, how about you ?",
   },
+  { question: "Yoo ", answer: "Hello there, how are you " },
   { question: "I am fine and you ?", answer: "I'm all set, thank you " },
   {
     question: "who are you ?",
     answer: "My Name is Vercel, an AI model developed by LANTEX .",
+  },
+  {
+    question: "hii",
+    answer: " Hello there again, how may I assist you ?",
   },
   { question: "Heyy", answer: "Hello there user" },
   { question: "hello bot", answer: "Hello user" },
@@ -57,7 +62,7 @@ const db = [
   },
   { question: "yup", answer: "okay" },
   {
-    question: "what is LANTEX?",
+    question: "what is LANTEX technologies?",
     answer:
       "A tech electronics company that also specializes in Artificial intelligence combined with mechatronics.",
   },
@@ -225,13 +230,13 @@ const db = [
   { question: "im tired bot", answer: "what got you tired?" },
   {
     question: "i was doing some work..",
-    answer: "at least you done something and i hope its productive.",
+    answer: "at least you something done and hope it was productive.",
   },
   { question: "how many planets exists", answer: "8 plaanets " },
   { question: "hi", answer: "helloo" },
   {
     question: "im fine thanks",
-    answer: "all good... how can i help you  user ?",
+    answer: "all good... how may I assist you ?",
   },
   { question: "hey", answer: "hello" },
   {
@@ -249,7 +254,7 @@ const db = [
       "Tesla, Inc. ( TESS-l\u0259 or  TEZ-l\u0259) is an American multinational automotive and clean energy company headquartered in Austin, Texas, which designs and manufactures electric vehicles (cars and trucks), stationary battery energy storage devices from home to grid-scale, solar panels and solar shingles, and related products and services. Its subsidiary Tesla Energy develops and is a major installer of photovoltaic systems in the United States and is one of the largest global suppliers of battery energy storage systems with 6.5 gigawatt-hours (GWh) installed in 2022.",
   },
   {
-    question: "what is microsoft",
+    question: "what is microsoft company ?",
     answer:
       "Microsoft Teams is a proprietary business communication platform developed by Microsoft, as part of the Microsoft 365 family of products.\nTeams primarily competes with the similar service Slack, offering workspace chat and videoconferencing, file storage and application integration. Teams replaced other Microsoft-operated business messaging and collaboration platforms, including Skype for Business and Microsoft Classroom.",
   },
@@ -379,6 +384,21 @@ textArea.addEventListener("click", () => {
   button.style.color = "#fff";
 });
 
+textArea.addEventListener("keyup", () => {
+  if (
+    textArea.value.trim() === "" ||
+    textArea.value.trim() == " " ||
+    textArea.value.trim() == undefined ||
+    textArea.value.trim() == null
+  ) {
+    const sendIcon = document.querySelector("#send_icon");
+    sendIcon.setAttribute("class", "fas fa-arrow-right");
+  } else {
+    const sendIcon = document.querySelector("#send_icon");
+    sendIcon.setAttribute("class", "fas fa-check");
+  }
+});
+
 //set action for when clicking activator button
 activator_btn.addEventListener("click", () => {
   composeArea.style.display = "";
@@ -388,18 +408,21 @@ activator_btn.addEventListener("click", () => {
 
 //set action for clicking the send button
 button.addEventListener("click", () => {
-  let user_input_main = textArea.value;
+  let user_input_main = textArea.value.trim();
 
   // keep the focus on the textarea button...
   textArea.focus();
 
   //validate for an empty input
-  if (user_input_main.toLowerCase() == "") {
+  if (
+    user_input_main.toLowerCase() == "" ||
+    user_input_main.toLowerCase() == null
+  ) {
     return null;
   }
 
   //create two paragraph elements
-  const user_text = document.createElement("p");
+  const user_text = document.createElement("div");
 
   //set user paragraph and clear the text area ...
   user_text.setAttribute("class", "chat_paragraphs");
@@ -410,7 +433,7 @@ button.addEventListener("click", () => {
   //create a new fuse
   const fuse = new Fuse(db, {
     keys: ["question"],
-    threshold: 0.26,
+    threshold: 0.24,
   });
 
   const result = fuse.search(user_input_main);
@@ -451,56 +474,165 @@ button.addEventListener("click", () => {
     textSpace.appendChild(bot_text);
     //bot response
     bot_realisation =
-      "I don't know the answer, can you please teach me, or type 'skip' to skip . ";
+      "I don't know the answer the answer to your question, try being more specific, if it's a query for a definition, try using the keywords only. Lantex is still on it's early stages of development, so please kindly keep revisiting us for updates as we advance, thank you for your patience and understanding.";
     textArea.value = "";
 
     //fetch the answer on wikipedia...
     async function getWikiSummary(query) {
       //alert("searching wikipedia")
-      const response = await fetch(
+      return fetch(
         `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(
           query
         )}`
-      );
-      const data = response.json();
-      if (!response.ok) {
-        console.error("no search results");
-        let bot_alert =
-          "I don't know the answer, can you please teach me ? enter the answer or 'skip' to skip .";
-        let bot_realisation = prompt(bot_alert);
+      )
+        .then((response) => response.json())
+        .then((data) => data)
+        .catch((err) => {
+          return null;
+        });
+    }
 
-        if (
-          bot_realisation.toLowerCase() == null ||
-          bot_realisation.toLowerCase() == "" ||
-          bot_realisation.toLowerCase() == undefined
-        ) {
-          alert(
-            "You did not teach me the answer, for the fact that I don't know it it means that I'm still evolving. "
-          );
+    // // the main JSONP function...
+    // function ddg(data) {
+    //   //create a variable to hold the text
+    //   console.log(data);
+    //   let text = "";
+
+    //   if (data.Heading) {
+    //     document.querySelector("#heading").textContent = data.Heading;
+    //   }
+    //   //the main answer
+    //   if (data.AbstractText) {
+    //     text += data.AbstractText + "<br/><br/>";
+    //   }
+
+    //   //   get the related topics list
+    //   if (data.RelatedTopics) {
+    //     data.RelatedTopics.forEach((item) => {
+    //       if (item.Text) {
+    //         text += "<br/>" + item.Text + "<br/><br/>";
+    //       }
+    //     });
+    //   }
+
+    //   if (data.Definition) {
+    //     text += "<br/>...." + data.Definition + "<br/>";
+    //   }
+
+    //   bot_text.innerHTML = text;
+    //   console.log(";;;;;;");
+    // }
+
+    async function search(query) {
+      return fetch(
+        `https://api.duckduckgo.com/?q=${encodeURIComponent(
+          query
+        )}&format=json&no_redirect=1`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          return data;
+        });
+    }
+
+    async function representSummary(query_) {
+      //
+      const res = await getWikiSummary(query_);
+
+      if (res.status != 403 && res.status != 404) {
+        // console.log(res.status);
+        bot_text.innerHTML = res.extract_html;
+        // console.log("response 1 is working....");
+        //
+      } else if (res.status != 403 || res.status != 404) {
+        const responseTwo = await search(query_);
+
+        // check if there is abstract text
+        if (responseTwo) {
+          // match the title of the returned response with the users query...
+          const match_query = ((user_query, response_title) => {
+            const container = [user_query];
+
+            // create a new fuse
+            const newFuse = new Fuse(container, {
+              threshold: 0.55,
+            });
+
+            const results = newFuse.search(response_title);
+            // check if the word in the response title exist in the user query...
+            const checkByWords = (user_query, response_title) => {
+              let counter = 0;
+              for (title_word of response_title.split(" ")) {
+                for (query_word of user_query.split(" ")) {
+                  // console.log(
+                  //   `query : ${query_word}            Title : ${title_word}`
+                  // );
+
+                  if (title_word.toLowerCase() === query_word.toLowerCase()) {
+                    counter += 1;
+                    // console.log("Equal....");
+                  }
+                }
+              }
+              // console.log(response_title.split(" ").length);
+              if (counter + 2 >= response_title.split(" ").length) {
+                return counter;
+              } else {
+                return 0;
+              }
+            };
+
+            let title_ = responseTwo.Heading;
+
+            if (
+              (results.length > 0 &&
+                checkByWords(user_input_main, title_) > 0) ||
+              responseTwo.RelatedTopics.length > 0
+            ) {
+              const paraGraph = document.createElement("p");
+
+              paraGraph.textContent = responseTwo.AbstractText;
+              bot_text.appendChild(paraGraph);
+
+              if (responseTwo.RelatedTopics) {
+                const related_topics_array = responseTwo.RelatedTopics.slice(
+                  0,
+                  3
+                );
+                related_topics_array.forEach((item) => {
+                  const newUrl = document.createElement("a");
+                  const br = document.createElement("br");
+                  newUrl.setAttribute("href", item.FirstURL);
+                  console.log(item.FirstURL);
+                  newUrl.setAttribute("class", "newUrl");
+                  newUrl.innerHTML = item.Text;
+
+                  bot_text.appendChild(newUrl);
+                  bot_text.appendChild(br);
+                  bot_text.appendChild(br);
+                });
+              }
+
+              // console.log(responseTwo);
+              //
+            } else {
+              console.log("incorrect results...!");
+              // console.log(responseTwo);
+              window.alert(bot_realisation);
+              return null;
+            }
+          })(user_input_main, responseTwo.Heading);
+          //
         } else {
-          bot_text.textContent = "Thank you for teaching me the answer .";
-          let new_knowledge = {
-            question: user_input_main,
-            answer: bot_realisation,
-          };
-
-          db.push(new_knowledge);
+          window.alert(bot_realisation);
         }
 
-        return null;
-      }
-      return data;
-    }
-
-    async function representSummary(result) {
-      const res = await result;
-      if (res) {
-        bot_text.innerHTML = res.extract_html;
+        //
       } else {
-        return null;
+        window.alert(bot_realisation);
       }
     }
 
-    representSummary(getWikiSummary(user_input_main));
+    representSummary(user_input_main);
   }
 });
