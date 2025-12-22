@@ -1,5 +1,7 @@
 body {
-  background: url("darklantex.jpg");
+  background-image: url("lightlantex.jpeg");
+  background-color: rgba(43, 66, 128, 0.945);
+  background-blend-mode: overlay;
   color: #f5f5f5;
   text-align: center;
   font-weight: lighter;
@@ -19,7 +21,7 @@ body {
 }
 
 header {
-  border: 1px solid whitesmoke;
+  border: 1px solid rgb(22, 22, 22);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,14 +43,14 @@ header h1 {
 }
 
 header abbr {
-  background-image: linear-gradient(to bottom, rgb(243, 243, 243), #000a91);
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0), #000764);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-weight: lighter;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 main {
