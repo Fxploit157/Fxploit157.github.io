@@ -1,7 +1,8 @@
 body {
   background-image: url("lightlantex.jpeg");
-  background-color: rgba(43, 66, 128, 0.945);
+  background-color: #17181a;
   background-blend-mode: overlay;
+  background-size: 50%;
   color: #f5f5f5;
   text-align: center;
   font-weight: lighter;
@@ -17,10 +18,30 @@ body {
 
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
-  box-shadow: 2px 1px 3px cyan;
+  box-shadow: 2px 1px 3px rgb(45, 46, 46);
+}
+
+.anim {
+  animation: changeColor ease-out 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    background-color: #17181a;
+  }
+
+  50% {
+    background-color: #031d0593;
+  }
+
+  100% {
+    background-color: #17181a;
+  }
 }
 
 header {
+  position: relative;
   border: 1px solid rgb(22, 22, 22);
   display: flex;
   justify-content: center;
@@ -43,7 +64,7 @@ header h1 {
 }
 
 header abbr {
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0), #000764);
+  background-image: linear-gradient(to bottom, rgb(14, 228, 6), #1a3fe2);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -51,6 +72,52 @@ header abbr {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
   font-size: 18px;
+}
+
+header button {
+  position: absolute;
+  height: 30px;
+  width: 50px;
+  top: 0;
+  right: 0;
+  margin: 2px;
+  border: none;
+  border-radius: 20px;
+
+  background-color: #272424;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  cursor: pointer;
+}
+
+header button::before {
+  position: inherit;
+  content: " ";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #cfcfdb;
+
+  right: 0;
+}
+
+.btn {
+  background-color: #928c8c;
+}
+
+.btn::before {
+  position: inherit;
+  content: " ";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #1d1d1d;
+  left: 0;
+  right: auto;
 }
 
 main {
@@ -90,7 +157,7 @@ main {
   font-weight: lighter;
   font-size: 20px;
   text-decoration: none;
-  color: rgb(2, 0, 114);
+  color: #9fef00;
   width: 90%;
 }
 
@@ -99,9 +166,8 @@ main {
 
   /* padding: 5px 5px 5px 5px; */
 
-  background-color: #ffffff;
-  text-decoration: underline;
-  text-decoration-color: #fff;
+  background-color: #4d4d4d;
+  text-decoration: none;
 }
 
 #compose_section {
@@ -190,6 +256,7 @@ main {
 #compose_section button i {
   color: #f8f1f1;
   font-size: 30px;
+  cursor: pointer;
 }
 
 #activator #activator_btn {

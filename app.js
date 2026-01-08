@@ -371,6 +371,22 @@ const textArea = document.querySelector("#text_area");
 const composeArea = document.querySelector("#compose_section");
 const activator_btn = document.querySelector("#activator_btn");
 
+// textArea.addEventListener("keydown", (event) => {
+//   if (event.key === "Enter") {
+//     if (
+//       event.target.value == "" ||
+//       event.target.value == null ||
+//       event.target.value == undefined
+//     ) {
+//       event.target.value = "";
+//     } else {
+//       let user_input_main = event.target.value;
+//       alert(user_input_main);
+//       textArea.value = null;
+//     }
+//   }
+// });
+
 //set display
 textArea.style.display = "none";
 composeArea.style.display = "none";
