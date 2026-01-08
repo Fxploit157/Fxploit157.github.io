@@ -64,14 +64,14 @@ header h1 {
 }
 
 header abbr {
-  background-image: linear-gradient(to bottom, rgb(14, 228, 6), #1a3fe2);
+  background-image: linear-gradient(to bottom, #1effff, #ff008c);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-weight: lighter;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 1px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 header button {
