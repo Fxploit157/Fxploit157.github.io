@@ -22,8 +22,9 @@ body {
 }
 
 .anim {
-  animation: changeColor ease-out 14s;
-  animation-iteration-count: infinite;
+  /* animation: changeColor ease-out 14s; */
+  /* animation-iteration-count: infinite; */
+  background-color: rgb(17, 18, 22);
 }
 
 @keyframes changeColor {
@@ -84,7 +85,7 @@ header abbr {
   font-size: 22px;
 
   padding: 2px 2px 2px 2px;
-  box-shadow: 0px 1px 3dvw #000;
+  box-shadow: 0px 1px 6px #000;
   border-radius: 10px;
 }
 
@@ -122,7 +123,7 @@ header button::before {
 }
 
 .btn {
-  background-color: #2e2e2e;
+  background-color: transparent;
   box-shadow: 0px 1px 6px #000;
 }
 
@@ -152,12 +153,14 @@ main {
   margin: 10px 10px 10px 10px;
   border: none;
   border-radius: 10px;
+  /* box-shadow: 0px 1px 6px #000; */
 
   position: relative;
 }
 
 #user_message {
   background-color: rgba(245, 245, 245, 0.671);
+  box-shadow: 0px 1px 6px #000;
   color: #000;
   width: 45%;
   font-size: 15px;
