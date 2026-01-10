@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
       answer: "at least you something done and hope it was productive.",
     },
     { question: "how many planets exists", answer: "8 plaanets " },
-    { question: "hi", answer: "helloo" },
+    { question: "hi", answer: "Hello there, how may I assist you ?.." },
     {
       question: "im fine thanks",
       answer: "all good... how may I assist you ?",

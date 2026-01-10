@@ -1,6 +1,10 @@
 body {
   background-image: url("lightlantex.jpeg");
-  background-color: #07e2ffa7;
+  background: linear-gradient(
+    to right,
+    rgba(25, 29, 23, 0.5),
+    rgba(1, 2, 2, 0.699)
+  );
   background-blend-mode: overlay;
   background-size: 50%;
   color: #f5f5f5;
@@ -22,29 +26,29 @@ body {
 }
 
 .anim {
-  animation: changeColor ease-out 10s;
+  animation: changeColor ease-out 14s;
   animation-iteration-count: infinite;
 }
 
 @keyframes changeColor {
   0% {
-    background-color: #17181a;
+    background: linear-gradient(to right, rgb(25, 29, 23), #010202);
   }
 
   25% {
-    background-color: #00ffff;
+    background: linear-gradient(to left, rgb(25, 29, 23), #00ffff);
   }
 
   50% {
-    background-color: #32fa00e7;
+    background: linear-gradient(to left, rgb(25, 29, 23), #32fa00e7);
   }
 
   75% {
-    background-color: #0d6efd;
+    background: linear-gradient(to left, rgb(25, 29, 23), #052350);
   }
 
   100% {
-    background-color: #17181a;
+    background: linear-gradient(to right, rgb(25, 29, 23), #010202);
   }
 }
 
@@ -66,7 +70,7 @@ header {
 }
 
 header h1 {
-  font-size: 40px;
+  font-size: 42px;
   background-image: linear-gradient(to bottom, #015aff, #1000f0);
   background-clip: text;
   -webkit-background-clip: text;
