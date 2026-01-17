@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
       question: "Hello bot how are you",
       answer: "I am fine user, how about you ?",
     },
+    {
+      question: "how are you doing",
+      answer: "I am how about you ?",
+    },
     { question: "Yoo ", answer: "Hello there, how are you " },
     { question: "I am fine and you ?", answer: "I'm all set, thank you " },
     {
@@ -384,6 +388,14 @@ document.addEventListener("DOMContentLoaded", () => {
       Body_.classList.remove("anim");
     } else {
       Body_.classList.add("anim");
+    }
+
+    textArea.style.color = "#000";
+
+    if (textArea.style.color == "#000") {
+      textArea.style.color = "#fff";
+    } else if (textArea.style.color == "#fff") {
+      textArea.style.color = "#000";
     }
   });
 
